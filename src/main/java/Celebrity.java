@@ -36,14 +36,12 @@ public class Celebrity {
             }
         }
         for (int i = 0; i < group.length; i++) {
-            System.out.println("A" + i);
             if ((i != l) &&
                     (!group[i].isKnown(group[l]) ||
                             group[l].isKnown(group[i]))) {
                 return null;
             }
         }
-        System.out.println(group[l]);
         return group[l];
     }
 
@@ -54,9 +52,9 @@ public class Celebrity {
 }
 
 class Person {
-    String name;
+    public String name;
 
-    List<Person> known = new ArrayList<>();
+    private final List<Person> known = new ArrayList<>();
 
     public Person(String name) {
         this.name = name;

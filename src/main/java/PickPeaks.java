@@ -30,9 +30,9 @@ import java.util.*;
 public class PickPeaks {
 
     public static Map<String, List<Integer>> getPeaks(int[] arr) {
-        Map<String, List<Integer>> result = new HashMap<String, List<Integer>>() {{
-            put("pos", new ArrayList<Integer>());
-            put("peaks", new ArrayList<Integer>());
+        Map<String, List<Integer>> result = new HashMap<>() {{
+            put("pos", new ArrayList<>());
+            put("peaks", new ArrayList<>());
         }};
         int maxPos = 0;
         boolean up = false;
@@ -42,7 +42,6 @@ public class PickPeaks {
                 maxPos = i;
             }
             if ((arr[i - 1] > arr[i]) && (up)) {
-//                System.out.println("Index = " + i + " pos =" + maxPos + " peak = " + arr[maxPos]);
                 result.get("pos").add(maxPos);
                 result.get("peaks").add(arr[maxPos]);
                 up = false;
